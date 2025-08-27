@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Importando ícones do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+      </div>
+      <div class="form-group senha-wrapper">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" required>
+        <i id="toggleSenha" class="fa-solid fa-eye"></i>
+      </div>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+    <div class="extra">
+      <p>Não tem conta? <a href="#">Cadastre-se</a></p>
+    </div>
+  </div>
+
+  <script>
+    const senhaInput = document.getElementById("senha");
+    const toggleBtn = document.getElementById("toggleSenha");
+
+    toggleBtn.addEventListener("click", () => {
+      const tipo = senhaInput.getAttribute("type") === "password" ? "text" : "password";
+      senhaInput.setAttribute("type", tipo);
+
+      // troca o ícone entre olho aberto e fechado
+      toggleBtn.classList.toggle("fa-eye");
+      toggleBtn.classList.toggle("fa-eye-slash");
+    });
+  </script>
+</body>
+</html>
